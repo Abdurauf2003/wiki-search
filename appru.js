@@ -11,7 +11,7 @@ const submitFunction = (event) => {
 form.addEventListener("submit", submitFunction);
 
 const getResults = (query) => {
-    const url = `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&origin=*&srlimit=25&utf8=&format=json&srsearch=${query}`
+    const url = `https://ru.wikipedia.org/w/api.php?action=query&list=search&prop=info&origin=*&srlimit=25&utf8=&format=json&srsearch=${query}`
 
     fetch(url)
         .then((res) => res.json())
@@ -27,7 +27,7 @@ const addResults = (sResults) => {
     searchResult.innerHTML = "";
 
     sResults.forEach((result) => {
-        const url = `https://en.wikipedia.org/?curid=${result.pageid}`;
+        const url = `https://ru.wikipedia.org/?curid=${result.pageid}`;
 
         searchResult.insertAdjacentHTML(
             "beforeend", // yoki aftebegin
